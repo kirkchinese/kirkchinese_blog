@@ -1,0 +1,40 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+
+const allPosts = await getCollection('blog');
+const posts = allPosts
+  .filter(post => !post.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<BaseLayout
+  title="Blog - Arnold Kirk"
+  description="Thoughts, tutorials, and insights on technology and development."
+  type="website"
+>
+  <div class="mx-auto max-w-7xl px-4 py-16 lg:px-8">
+    <div class="mx-auto max-w-2xl mb-12 text-center">
+      <h1 class="mb-4 text-4xl font-bold font-serif">Blog</h1>
+      <p class="text-lg text-text-muted">
+        Thoughts, tutorials, and insights on technology, AI, and building things.
+      </p>
+    </div>
+
+    {posts.length === 0 ? (
+      <div class="text-center text-text-muted">
+        <p class="mb-4 text-lg">No posts yet. Check back soon!</p>
+        <a href="/" class="text-primary hover:underline">
+          ← Back to home
+        </a>
+      </div>
+    ) : (
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {posts.map(post => (
+          <PostCard post={post} />
+        ))}
+      </div>
+    )}
+  </div>
+</BaseLayout>

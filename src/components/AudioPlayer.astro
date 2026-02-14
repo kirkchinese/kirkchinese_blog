@@ -1,0 +1,200 @@
+---
+interface Props {
+  src: string;
+  title?: string;
+  duration?: string;
+  transcript?: string;
+}
+
+const { src, title = 'Audio Player', duration, transcript } = Astro.props;
+---
+
+<div class="audio-player">
+  <div class="flex items-center justify-between mb-3">
+    <span class="font-semibold text-text-base" aria-live="polite">{title}</span>
+    {duration && <span class="text-sm text-text-muted">{duration}</span>}
+  </div>
+
+  <audio
+    src={src}
+    preload="metadata"
+    aria-label={`Audio: ${title}`}
+  >
+    Your browser does not support the audio element.
+    <a href={src} download>
+      Download audio file
+    </a>
+  </audio>
+
+  <div class="player-controls flex items-center gap-3">
+    <button
+      data-play-pause
+      class="play-button flex h-10 w-10 items-center justify-center rounded-full bg-primary text-background hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary"
+      aria-label="Play"
+      type="button"
+    >
+      <svg class="h-4 w-4 fill-current play-icon" viewBox="0 0 24 24">
+        <path d="M8 5v14l11-7z" />
+      </svg>
+      <svg class="h-4 w-4 fill-current pause-icon hidden" viewBox="0 0 24 24">
+        <path d="M6 4h4v16H6zM14 4h4v16h-4z" />
+      </svg>
+    </button>
+
+    <div class="relative flex-1">
+      <div class="progress-bg absolute inset-0 h-2 rounded-full bg-border overflow-hidden">
+        <div class="progress-fill h-full w-0 bg-primary transition-all duration-100"></div>
+      </div>
+      <input
+        type="range"
+        min="0"
+        max="100"
+        value="0"
+        data-seek
+        class="absolute inset-0 h-full w-full cursor-pointer opacity-0"
+        aria-label="Seek"
+      />
+    </div>
+
+    <div class="time-display min-w-[80px] text-right text-sm tabular-nums text-text-muted">
+      <span class="current-time">0:00</span>
+      <span class="mx-1">/</span>
+      <span class="total-time">0:00</span>
+    </div>
+  </div>
+
+  {transcript && (
+    <details class="group mt-4 border-t border-border pt-4">
+      <summary class="cursor-pointer font-medium text-primary hover:text-primary-dark">
+        Show Transcript
+      </summary>
+      <div class="mt-3 text-sm leading-relaxed text-text-muted" aria-label="Transcript">
+        <set:html html={transcript} />
+      </div>
+    </details>
+  )}
+</div>
+
+<script>
+  const player = document.currentScript?.parentElement;
+  if (!player) {
+    throw new Error('Audio player container not found');
+  }
+
+  const audio = player.querySelector('audio') as HTMLAudioElement;
+  const playButton = player.querySelector('[data-play-pause]') as HTMLButtonElement;
+  const playIcon = player.querySelector('.play-icon') as HTMLElement;
+  const pauseIcon = player.querySelector('.pause-icon') as HTMLElement;
+  const progressFill = player.querySelector('.progress-fill') as HTMLElement;
+  const progressInput = player.querySelector('[data-seek]') as HTMLInputElement;
+  const currentTimeEl = player.querySelector('.current-time') as HTMLElement;
+  const totalTimeEl = player.querySelector('.total-time') as HTMLElement;
+
+  const formatTime = (seconds: number): string => {
+    const mins = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${mins}:${secs.toString().padStart(2, '0')}`;
+  };
+
+  const togglePlay = () => {
+    if (audio.paused) {
+      audio.play();
+    } else {
+      audio.pause();
+    }
+  };
+
+  const updateProgress = () => {
+    if (audio.duration) {
+      const progress = (audio.currentTime / audio.duration) * 100;
+      progressFill.style.width = `${progress}%`;
+      progressInput.value = progress.toString();
+      currentTimeEl.textContent = formatTime(audio.currentTime);
+    }
+  };
+
+  playButton.addEventListener('click', togglePlay);
+
+  audio.addEventListener('loadedmetadata', () => {
+    totalTimeEl.textContent = formatTime(audio.duration);
+  });
+
+  audio.addEventListener('play', () => {
+    playIcon.classList.add('hidden');
+    pauseIcon.classList.remove('hidden');
+    playButton.setAttribute('aria-label', 'Pause');
+  });
+
+  audio.addEventListener('pause', () => {
+    playIcon.classList.remove('hidden');
+    pauseIcon.classList.add('hidden');
+    playButton.setAttribute('aria-label', 'Play');
+  });
+
+  audio.addEventListener('ended', () => {
+    playIcon.classList.remove('hidden');
+    pauseIcon.classList.add('hidden');
+    progressFill.style.width = '0%';
+    progressInput.value = '0';
+    currentTimeEl.textContent = '0:00';
+  });
+
+  audio.addEventListener('timeupdate', updateProgress);
+
+  progressInput.addEventListener('input', (e) => {
+    const target = parseFloat((e.target as HTMLInputElement).value);
+    if (audio.duration) {
+      audio.currentTime = (target / 100) * audio.duration;
+    }
+  });
+
+  // Keyboard shortcuts
+  player.addEventListener('keydown', (e) => {
+    const target = e.target as HTMLElement;
+    if (target.closest('button, input')) {
+      switch (e.key) {
+        case ' ':
+          togglePlay();
+          break;
+        case 'k':
+          togglePlay();
+          break;
+        case 'ArrowLeft':
+          audio.currentTime = Math.max(0, audio.currentTime - 5);
+          break;
+        case 'ArrowRight':
+          audio.currentTime = Math.min(audio.duration || 0, audio.currentTime + 5);
+          break;
+      }
+    }
+  });
+</script>
+
+<style>
+  .progress-bg {
+    transition: background-color 0.3s;
+  }
+
+  .play-button {
+    transition: transform 0.1s, background-color 0.2s;
+  }
+
+  .play-button:hover {
+    transform: scale(1.05);
+  }
+
+  .play-button:active {
+    transform: scale(0.95);
+  }
+
+  details[open] summary::after {
+    content: ' Hide';
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .play-button,
+    .progress-fill {
+      transition: none !important;
+    }
+  }
+</style>

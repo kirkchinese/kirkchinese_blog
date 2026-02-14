@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light mode colors */
+    --color-background: 255 255 255;
+    --color-text-base: 23 23 23;
+    --color-text-muted: 115 115 115;
+    --color-primary: 37 99 235;
+    --color-primary-dark: 30 64 175;
+    --color-border: 229 231 235;
+  }
+
+  .dark {
+    /* Dark mode colors */
+    --color-background: 9 9 11;
+    --color-text-base: 250 250 250;
+    --color-text-muted: 161 161 170;
+    --color-primary: 96 165 250;
+    --color-primary-dark: 59 130 246;
+    --color-border: 39 39 42;
+  }
+
+  body {
+    @apply bg-background text-text-base font-sans antialiased;
+  }
+
+  /* Typography optimization */
+  article {
+    @apply prose prose-lg max-w-none;
+  }
+
+  article h1 {
+    @apply text-4xl font-bold mt-12 mb-4 first:mt-0;
+  }
+
+  article h2 {
+    @apply text-3xl font-bold mt-10 mb-3 first:mt-0;
+  }
+
+  article h3 {
+    @apply text-2xl font-bold mt-8 mb-2 first:mt-0;
+  }
+
+  article p {
+    @apply my-4 leading-relaxed;
+  }
+
+  article a {
+    @apply text-primary hover:underline underline-offset-2;
+  }
+
+  article code {
+    @apply bg-primary/10 rounded px-1.5 py-0.5 text-sm font-mono text-text-base;
+  }
+
+  article pre {
+    @apply bg-background border border-border rounded-lg p-4 overflow-x-auto my-6;
+  }
+
+  article pre code {
+    @apply bg-transparent p-0 text-sm;
+  }
+
+  article blockquote {
+    @apply border-l-4 border-primary pl-4 italic text-text-muted my-6;
+  }
+
+  article ul,
+  article ol {
+    @apply my-4 space-y-2;
+  }
+
+  article li {
+    @apply ml-6;
+  }
+
+  article img {
+    @apply rounded-lg shadow-md my-8;
+  }
+}
+
+@layer components {
+  /* Smooth dark mode transition */
+  body {
+    @apply transition-colors duration-300;
+  }
+
+  /* Audio player styles */
+  .audio-player {
+    @apply bg-background border border-border rounded-xl p-6 shadow-sm;
+  }
+
+  .audio-player button {
+    @apply transition-all duration-200;
+  }
+
+  /* Card hover effects */
+  .post-card {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  /* Navigation */
+  .nav-link {
+    @apply transition-colors duration-200 hover:text-primary;
+  }
+}

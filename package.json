@@ -1,0 +1,42 @@
+{
+  "name": "arnold-kirk-blog",
+  "version": "1.0.0",
+  "description": "Personal blog for arnold-kirk.com with AI-friendly content management and audio support",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "lint": "prettier --write --plugin prettier-plugin-astro .",
+    "validate": "astro check"
+  },
+  "keywords": [
+    "blog",
+    "astro",
+    "markdown",
+    "mdx",
+    "audio"
+  ],
+  "author": "Arnold Kirk",
+  "license": "MIT",
+  "dependencies": {
+    "@astrojs/mdx": "^4.3.13",
+    "@astrojs/rss": "^4.0.15",
+    "@astrojs/sitemap": "^3.7.0",
+    "@astrojs/tailwind": "^6.0.2",
+    "@types/node": "^25.2.3",
+    "astro": "^5.17.2",
+    "howler": "^2.2.4",
+    "tailwindcss": "^3.4.19",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.6",
+    "@tailwindcss/typography": "^0.5.19",
+    "@types/howler": "^2.2.12",
+    "terser": "^5.46.0",
+    "typescript": "^5.9.3"
+  }
+}

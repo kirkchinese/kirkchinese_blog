@@ -1,0 +1,106 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'Arnold Kirk';
+const description = 'Personal blog with thoughts on technology, AI, and building things.';
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="min-h-[calc(100vh-12rem)]">
+    <!-- Hero Section -->
+    <section class="mx-auto max-w-4xl px-4 pt-20 pb-16 lg:px-8 lg:pt-32">
+      <div class="animate-fade-in">
+        <p class="mb-4 text-sm font-semibold tracking-wide uppercase text-primary">Welcome</p>
+        <h1 class="mb-6 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl font-serif">
+          Thoughts on technology, AI, and the art of building things
+        </h1>
+        <p class="max-w-2xl text-lg text-text-muted sm:text-xl font-light leading-relaxed">
+          I'm Arnold Kirk, a developer exploring the intersections of software engineering,
+          artificial intelligence, and creative problem-solving.
+        </p>
+      </div>
+    </section>
+
+    <!-- Navigation Cards -->
+    <section class="mx-auto max-w-6xl px-4 pb-20 lg:px-8">
+      <div class="grid gap-6 sm:grid-cols-2 lg:gap-8">
+        <!-- Blog Card -->
+        <a
+          href="/blog"
+          class="group relative overflow-hidden rounded-2xl border border-border bg-background p-8 transition-all duration-300 hover:border-primary hover:shadow-lg hover:-translate-y-1"
+        >
+          <div class="flex items-start justify-between">
+            <div>
+              <h2 class="mb-3 text-2xl font-bold tracking-tight sm:text-3xl font-serif">Blog</h2>
+              <p class="text-text-muted leading-relaxed">
+                Articles, tutorials, and insights on web development, AI, and technology trends.
+              </p>
+            </div>
+            <svg
+              class="h-6 w-6 text-text-muted transition-all duration-300 group-hover:text-primary group-hover:translate-x-1"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </div>
+          <div class="absolute inset-0 -z-10 bg-gradient-to-br from-primary/0 via-primary/0 to-primary/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+        </a>
+
+        <!-- About Card -->
+        <a
+          href="/about"
+          class="group relative overflow-hidden rounded-2xl border border-border bg-background p-8 transition-all duration-300 hover:border-primary hover:shadow-lg hover:-translate-y-1"
+        >
+          <div class="flex items-start justify-between">
+            <div>
+              <h2 class="mb-3 text-2xl font-bold tracking-tight sm:text-3xl font-serif">About</h2>
+              <p class="text-text-muted leading-relaxed">
+                Learn more about my background, skills, interests, and current projects.
+              </p>
+            </div>
+            <svg
+              class="h-6 w-6 text-text-muted transition-all duration-300 group-hover:text-primary group-hover:translate-x-1"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </div>
+          <div class="absolute inset-0 -z-10 bg-gradient-to-br from-primary/0 via-primary/0 to-primary/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+        </a>
+      </div>
+
+      <!-- Recent Writing Preview -->
+      <div class="mt-16 text-center">
+        <p class="text-text-muted">
+          Want to get in touch? Find me on
+          <a href="https://github.com/kirkchinese" target="_blank" rel="noopener noreferrer" class="font-medium text-primary hover:underline">
+            GitHub
+          </a>
+        </p>
+      </div>
+    </section>
+  </div>
+
+  <!-- Fade-in animation -->
+  <style is:global>
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-fade-in {
+      animation: fade-in 0.6s ease-out forwards;
+    }
+  </style>
+</BaseLayout>
