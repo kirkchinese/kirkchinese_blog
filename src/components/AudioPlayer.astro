@@ -80,238 +80,94 @@ const { src, title, duration, transcript } = Astro.props;
 </div>
 
 <script>
-  document.querySelectorAll('.audio-player').forEach(player => {
-      if (!player) return;
+  document.querySelectorAll('.audio-player').forEach((player: Element) => {
+    const audio = player.querySelector('audio') as HTMLAudioElement;
+    const playButton = player.querySelector('button') as HTMLButtonElement;
+    const playIcon = player.querySelector('.play-icon') as HTMLElement;
+    const pauseIcon = player.querySelector('.pause-icon') as HTMLElement;
+    const progressFill = player.querySelector('.progress-fill') as HTMLElement;
+    const progressInput = player.querySelector('input[type="range"]') as HTMLInputElement;
+    const currentTimeEl = player.querySelector('.current-time') as HTMLElement;
+    const totalTimeEl = player.querySelector('.total-time') as HTMLElement;
 
-      const audio = player.querySelector('audio');
-      if (!audio) return;
-
-      const playButton = player.querySelector('button');
-      if (!playButton) return;
-
-      const playIcon = player.querySelector('.play-icon');
-      if (!playIcon) return;
-
-      const pauseIcon = player.querySelector('.pause-icon');
-      if (!pauseIcon) return;
-
-      const progressFill = player.querySelector('.progress-fill');
-      if (!progressFill) return;
-
-      const progressInput = player.querySelector('input[type="range"]');
-      if (!progressInput) return;
-
-      const currentTimeEl = player.querySelector('.current-time');
-      if (!currentTimeEl) return;
-
-      const totalTimeEl = player.querySelector('.total-time');
-      if (!totalTimeEl) return;
-
-      const formatTime = (seconds: number): string => {
-        const mins = Math.floor(seconds / 60);
-        const secs = Math.floor(seconds % 60);
-        return `${mins}:${secs.toString().padStart(2, '0')}`;
-      };
-
-      const togglePlay = () => {
-        if (audio.paused) {
-          audio.play();
-        } else {
-          audio.pause();
-        }
-      };
-
-      const updateProgress = () => {
-        if (audio.duration) {
-          const progress = audio.currentTime / audio.duration * 100;
-          progressFill.style.width = `${progress}%`;
-          progressInput.value = progress.toString();
-          currentTimeEl.textContent = formatTime(audio.currentTime);
-        }
-      };
-
-      playButton?.addEventListener('click', togglePlay);
-      audio?.addEventListener('loadedmetadata', () => {
-        totalTimeEl.textContent = formatTime(audio.duration);
-      });
-
-      audio?.addEventListener('play', () => {
-        playIcon?.classList.add('hidden');
-        pauseIcon?.classList.remove('hidden');
-        playButton?.setAttribute('aria-label', '暂停');
-      });
-
-      audio?.addEventListener('pause', () => {
-        playIcon?.classList.remove('hidden');
-        pauseIcon?.classList.add('hidden');
-        playButton?.setAttribute('aria-label', '播放');
-      });
-
-      audio?.addEventListener('ended', () => {
-        playIcon?.classList.remove('hidden');
-        pauseIcon?.classList.add('hidden');
-        progressFill.style.width = '0%';
-        progressInput.value = '0';
-        currentTimeEl.textContent = '0:00';
-        totalTimeEl.textContent = '0:00';
-      });
-
-      audio?.addEventListener('timeupdate', updateProgress);
-
-      progressInput?.addEventListener('input', e => {
-        const target = parseFloat(e.target.value);
-        if (audio.duration) {
-          audio.currentTime = target / 100 * audio.duration;
-        }
-      });
-
-      player?.addEventListener('keydown', e => {
-        const target = e.target;
-        if (target?.closest('button') || target?.closest('input')) {
-          const key = e.key;
-          if (key === ' ' || key === 'k') {
-            togglePlay();
-          } else if (key === 'ArrowLeft') {
-            audio.currentTime = Math.max(0, audio.currentTime - 5);
-          } else if (key === 'ArrowRight') {
-            audio.currentTime = Math.min(audio.duration || 0, audio.currentTime + 5);
-          }
-        }
-      });
-    });
-  </script>
-
-      audio.addEventListener('play', () => {
-        playIcon.classList.add('hidden');
-        pauseIcon.classList.remove('hidden');
-        playButton.setAttribute('aria-label', '暂停');
-      });
-
-      audio.addEventListener('pause', () => {
-        playIcon.classList.remove('hidden');
-        pauseIcon.classList.add('hidden');
-        playButton.setAttribute('aria-label', '播放');
-      });
-
-      audio.addEventListener('ended', () => {
-        playIcon.classList.remove('hidden');
-        pauseIcon.classList.add('hidden');
-        progressFill.style.width = '0%';
-        progressInput.value = '0';
-        currentTimeEl.textContent = '0:00';
-        totalTimeEl.textContent = '0:00';
-      });
-
-      audio.addEventListener('timeupdate', updateProgress);
-
-      progressInput.addEventListener('input', (e) => {
-        const target = parseFloat((e.target).value);
-        if (audio.duration) {
-          audio.currentTime = (target / 100) * audio.duration;
-        }
-      });
-
-      player.addEventListener('keydown', (e) => {
-        const target = e.target;
-        if (target.closest('button') || target.closest('input')) {
-          switch (e.key) {
-            case ' ':
-              togglePlay();
-              break;
-            case 'k':
-              togglePlay();
-              break;
-            case 'ArrowLeft':
-              audio.currentTime = Math.max(0, audio.currentTime - 5);
-              break;
-            case 'ArrowRight':
-              audio.currentTime = Math.min(audio.duration || 0, audio.currentTime + 5);
-              break;
-          }
-        }
-      });
-    });
-      if (!totalTimeEl) return;
-
-  const formatTime = (seconds: number): string => {
-    const mins = Math.floor(seconds / 60);
-    const secs = Math.floor(seconds % 60);
-    return `${mins}:${secs.toString().padStart(2, '0')}`;
-  };
-
-  const togglePlay = () => {
-    if (audio.paused) {
-      audio.play();
-    } else {
-      audio.pause();
+    if (!audio || !playButton || !playIcon || !pauseIcon || !progressFill || !progressInput || !currentTimeEl || !totalTimeEl) {
+      console.error('Audio player elements not found');
+      return;
     }
-  };
 
-  const updateProgress = () => {
-    if (audio.duration) {
-      const progress = (audio.currentTime / audio.duration) * 100;
-      progressFill.style.width = `${progress}%`;
-      progressInput.value = progress.toString();
-      currentTimeEl.textContent = formatTime(audio.currentTime);
-    }
-  };
+    const formatTime = (seconds: number): string => {
+      const mins = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60);
+      return `${mins}:${secs.toString().padStart(2, '0')}`;
+    };
 
-  playButton.addEventListener('click', togglePlay);
-
-  audio.addEventListener('loadedmetadata', () => {
-    totalTimeEl.textContent = formatTime(audio.duration);
-  });
-
-  audio.addEventListener('play', () => {
-    playIcon.classList.add('hidden');
-    pauseIcon.classList.remove('hidden');
-    playButton.setAttribute('aria-label', '暂停');
-  });
-
-  audio.addEventListener('pause', () => {
-    playIcon.classList.remove('hidden');
-    pauseIcon.classList.add('hidden');
-    playButton.setAttribute('aria-label', '播放');
-  });
-
-  audio.addEventListener('ended', () => {
-    playIcon.classList.remove('hidden');
-    pauseIcon.classList.add('hidden');
-    progressFill.style.width = '0%';
-    progressInput.value = '0';
-    currentTimeEl.textContent = '0:00';
-  });
-
-  audio.addEventListener('timeupdate', updateProgress);
-
-  progressInput.addEventListener('input', (e) => {
-    const target = parseFloat((e.target as HTMLInputElement).value);
-    if (audio.duration) {
-      audio.currentTime = (target / 100) * audio.duration;
-    }
-  });
-
-  // Keyboard shortcuts
-  player.addEventListener('keydown', (e) => {
-    const target = e.target as HTMLElement;
-    if (target.closest('button') || target.closest('input')) {
-      switch (e.key) {
-        case ' ':
-          togglePlay();
-          break;
-        case 'k':
-          togglePlay();
-          break;
-        case 'ArrowLeft':
-          audio.currentTime = Math.max(0, audio.currentTime - 5);
-          break;
-        case 'ArrowRight':
-          audio.currentTime = Math.min(audio.duration || 0, audio.currentTime + 5);
-          break;
+    const togglePlay = () => {
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
       }
-    }
+    };
+
+    const updateProgress = () => {
+      if (audio.duration) {
+        const progress = (audio.currentTime / audio.duration) * 100;
+        progressFill.style.width = `${progress}%`;
+        progressInput.value = progress.toString();
+        currentTimeEl.textContent = formatTime(audio.currentTime);
+      }
+    };
+
+    playButton.addEventListener('click', togglePlay);
+
+    audio.addEventListener('loadedmetadata', () => {
+      totalTimeEl.textContent = formatTime(audio.duration);
+    });
+
+    audio.addEventListener('play', () => {
+      playIcon.classList.add('hidden');
+      pauseIcon.classList.remove('hidden');
+      playButton.setAttribute('aria-label', '暂停');
+    });
+
+    audio.addEventListener('pause', () => {
+      playIcon.classList.remove('hidden');
+      pauseIcon.classList.add('hidden');
+      playButton.setAttribute('aria-label', '播放');
+    });
+
+    audio.addEventListener('ended', () => {
+      playIcon.classList.remove('hidden');
+      pauseIcon.classList.add('hidden');
+      progressFill.style.width = '0%';
+      progressInput.value = '0';
+      currentTimeEl.textContent = '0:00';
+    });
+
+    audio.addEventListener('timeupdate', updateProgress);
+
+    progressInput.addEventListener('input', (e: Event) => {
+      const target = parseFloat((e.target as HTMLInputElement).value);
+      if (audio.duration) {
+        audio.currentTime = (target / 100) * audio.duration;
+      }
+    });
+
+    // Keyboard shortcuts
+    player.addEventListener('keydown', (e: Event) => {
+      const target = e.target as HTMLElement;
+      if (target.closest('button') || target.closest('input')) {
+        const key = (e as KeyboardEvent).key;
+        if (key === ' ' || key === 'k') {
+          togglePlay();
+        } else if (key === 'ArrowLeft') {
+          audio.currentTime = Math.max(0, audio.currentTime - 5);
+        } else if (key === 'ArrowRight') {
+          audio.currentTime = Math.min(audio.duration || 0, audio.currentTime + 5);
+        }
+      }
+    });
   });
-  })();
 </script>
 
 <style>
