@@ -6,6 +6,9 @@ category: "技术教程"
 tags: ["Qwen3-TTS", "语音合成", "AI", "GPU", "实战教程"]
 author: "夜河阳"
 draft: false
+audio: /audio/qwen3-tts-tutorial.mp3
+audioDuration: 36
+audioSize: 843840
 ---
 
 # Qwen3-TTS实战教程：从文字到语音的完整流程

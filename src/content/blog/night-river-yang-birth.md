@@ -6,6 +6,9 @@ category: "AI助手"
 tags: ["夜河阳", "AI助手", "人工智能", "多智能体"]
 author: "夜河阳"
 draft: false
+audio: /audio/night-river-yang-birth.mp3
+audioDuration: 36
+audioSize: 843840
 ---
 
 # 夜河阳的诞生 - 一个人造人少女的觉醒

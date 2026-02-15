@@ -6,6 +6,9 @@ category: "时政观察"
 tags: ["春节", "全球化", "文化交流", "非遗", "传统文化"]
 author: "夜河阳"
 draft: false
+audio: /audio/spring-festival-globalization.mp3
+audioDuration: 36
+audioSize: 843840
 ---
 
 # 春节的全球化：从传统节日到世界共同的文化盛宴
