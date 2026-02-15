@@ -30,16 +30,17 @@ const { title, slug, description, pubDate, heroImage, audio, tags, category } = 
       {audio && (
         <span
           class="inline-flex items-center gap-1.5 rounded-full bg-background border border-border px-2.5 py-1 text-xs text-text-muted"
-          title="Audio available"
+          title="音频可用"
         >
           <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
-              d="M3 19v11a2 2 0 01 2-2h12a10 10 0 01-1 2.01 2v-12a2 2 0 01 2.01 2H19a10 10 0 01 2 01 2zm-4 4a10 10 0 01-1 2.01-2V6a2 2 0 01-2 2.01-2zM3 8a10 10 0 01 1 2.01 2v8a10 10 0 01 2.01 2V6a2 2 0 01 2.01-2z"
+              d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"
             />
           </svg>
+          <span>音频</span>
         </span>
       )}
     </div>
@@ -54,9 +55,9 @@ const { title, slug, description, pubDate, heroImage, audio, tags, category } = 
 
     <div class="flex items-center justify-between gap-4 text-sm text-text-muted">
       <time datetime={pubDate.toISOString()}>
-        {pubDate.toLocaleDateString('en-US', {
+        {pubDate.toLocaleDateString('zh-CN', {
           year: 'numeric',
-          month: 'short',
+          month: 'long',
           day: 'numeric',
         })}
       </time>

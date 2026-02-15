@@ -1,84 +1,43 @@
+# 欢迎来到夜河阳的博客
+
 ---
-title: "Welcome to Arnold Kirk's Blog"
-description: "A warm welcome to my personal blog where I'll be sharing thoughts on technology, AI, web development, and art of building things."
-pubDate: 2026-02-14
-category: "updates"
-tags: ["welcome", "introduction"]
-author: "Arnold Kirk"
+title: "欢迎来到夜河阳的博客"
+description: "你好！这是我的个人博客，在这里我会分享关于技术、编程、人工智能和学习的思考与见解。"
+pubDate: 2025-02-14
+category: "公告"
+tags: ["博客", "介绍"]
 draft: false
-featured: true
 ---
 
-## Welcome! 👋
+## 你好！
 
-I'm excited to launch my personal blog, a space where I'll be sharing thoughts, experiences, and insights on:
+欢迎来到我的个人博客。我是夜河阳，一名开发者，对技术、编程和人工智能充满热情。
 
-- **Web Development** - Modern frameworks, best practices, and performance optimization
-- **Artificial Intelligence** - The latest in AI, machine learning, and how to leverage it
-- **Audio & Media** - Experiments with audio, podcasts, and multimedia content
-- **Building Things** - Side projects, tools, and creative endeavors
+## 这个博客关于什么
 
-## What to Expect
+在这里，我会分享：
 
-This blog is designed with both humans and AI assistants in mind:
+- **技术文章** - 关于Web开发、后端架构和编程最佳实践的思考
+- **AI探索** - 人工智能、大语言模型和机器学习的学习笔记
+- **项目经验** - 我在项目中学到的经验和教训
+- **学习资源** - 有用的教程、工具和资源推荐
+- **随笔思考** - 对技术趋势和个人成长的思考
 
-- **Clean, Reading-Focused Design** - Typography and layout optimized for comfortable reading
-- **Audio Content** - Posts with audio versions for when you prefer listening over reading
-- **AI-Friendly Structure** - Well-organized content with structured metadata for easy parsing
-- **Dark Mode** - Easy on the eyes, day or night
+## 为什么有音频版本
 
-## Coming Soon
+我相信内容应该以多种形式可访问。每篇文章都会提供音频版本，你可以：
 
-I'm just getting started! In coming weeks and months, I'll be publishing:
+- 在通勤或运动时收听
+- 在做其他事情时获取信息
+- 以你更喜欢的方式消费内容
 
-- Tutorials on web development and AI
-- Case studies from my projects
-- Experiments with new technologies
-- Podcast episodes and audio content
+音频使用AI语音合成生成，我会不断优化音质和自然度。
 
-## Stay Connected
+## 联系我
 
-Feel free to explore the blog, and don't hesitate to reach out if you have any questions or just want to chat. You can find me on [GitHub](https://github.com/kirkchinese).
+如果你对任何文章有疑问或想法，欢迎通过以下方式联系我：
 
-Thanks for stopping by, and I hope you find something interesting here!
+- GitHub: [@kirkchinese](https://github.com/kirkchinese)
+- Telegram: 跬步 芳泽
 
----
-
-*This post is an example of markdown-based content structure. Future posts will include more technical content, tutorials, and insights.*
-
-## Welcome! 👋
-
-I'm excited to launch my personal blog, a space where I'll be sharing my thoughts, experiences, and insights on:
-
-- **Web Development** - Modern frameworks, best practices, and performance optimization
-- **Artificial Intelligence** - The latest in AI, machine learning, and how to leverage it
-- **Audio & Media** - Experiments with audio, podcasts, and multimedia content
-- **Building Things** - Side projects, tools, and creative endeavors
-
-## What to Expect
-
-This blog is designed with both humans and AI assistants in mind:
-
-- **Clean, Reading-Focused Design** - Typography and layout optimized for comfortable reading
-- **Audio Content** - Posts with audio versions for when you prefer listening over reading
-- **AI-Friendly Structure** - Well-organized content with structured metadata for easy parsing
-- **Dark Mode** - Easy on the eyes, day or night
-
-## Coming Soon
-
-I'm just getting started! In the coming weeks and months, I'll be publishing:
-
-- Tutorials on web development and AI
-- Case studies from my projects
-- Experiments with new technologies
-- Podcast episodes and audio content
-
-## Stay Connected
-
-Feel free to explore the blog, and don't hesitate to reach out if you have any questions or just want to chat. You can find me on [GitHub](https://github.com/kirkchinese).
-
-Thanks for stopping by, and I hope you find something interesting here!
-
----
-
-*This post is an example of the markdown-based content structure. Future posts will include more technical content, tutorials, and insights.*
+感谢你的访问，希望你能在这里找到有价值的内容！

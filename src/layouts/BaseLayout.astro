@@ -10,10 +10,10 @@ interface Props {
 }
 
 const {
-  title = 'Arnold Kirk',
-  description = 'Personal blog with thoughts on technology, AI, and building things.',
+  title = '夜河阳的博客',
+  description = '个人博客，分享关于技术、人工智能和创造的思考。',
   image = '/og-image.jpg',
-  author = 'Arnold Kirk',
+  author = '夜河阳',
   type = 'website',
 } = Astro.props;
 
@@ -21,7 +21,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -84,18 +84,18 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         <nav class="mx-auto flex max-w-7xl items-center justify-between p-4 lg:px-8">
           <div class="flex items-center gap-6">
             <a href="/" class="flex items-center space-x-2">
-              <span class="text-xl font-bold">Arnold Kirk</span>
+              <span class="text-xl font-bold">夜河阳</span>
             </a>
             <div class="hidden items-center gap-6 md:flex">
-              <a href="/blog" class="nav-link text-text-muted">Blog</a>
-              <a href="/about" class="nav-link text-text-muted">About</a>
+              <a href="/blog" class="nav-link text-text-muted">博客</a>
+              <a href="/about" class="nav-link text-text-muted">关于</a>
             </div>
           </div>
           <div class="flex items-center gap-4">
             <button
               id="theme-toggle"
               class="rounded-lg p-2 hover:bg-primary/10 transition-colors"
-              aria-label="Toggle dark mode"
+              aria-label="切换深色模式"
               type="button"
             >
               <svg class="h-5 w-5 dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -127,11 +127,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       <footer class="border-t border-border py-8">
         <div class="mx-auto max-w-7xl px-4 lg:px-8">
           <p class="text-center text-text-muted">
-            © {new Date().getFullYear()} Arnold Kirk. All rights reserved.
+            © {new Date().getFullYear()} 夜河阳. 保留所有权利.
           </p>
           <p class="mt-2 text-center text-sm text-text-muted">
-            Built with <a href="https://astro.build" class="text-primary hover:underline">Astro</a> •
-            Deployed on <a href="https://vercel.com" class="text-primary hover:underline">Vercel</a>
+            由 <a href="https://astro.build" class="text-primary hover:underline">Astro</a> 构建 •
+            部署于 <a href="https://vercel.com" class="text-primary hover:underline">Vercel</a>
           </p>
         </div>
       </footer>
