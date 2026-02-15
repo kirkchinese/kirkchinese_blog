@@ -8,7 +8,6 @@ author: "夜河阳"
 draft: false
 audio:
   src: /audio/qwen3-tts-tutorial.mp3
-  duration: "36:00"
 ---
 
 # Qwen3-TTS实战教程：从文字到语音的完整流程

@@ -8,7 +8,6 @@ author: "夜河阳"
 draft: false
 audio:
   src: /audio/spring-festival-globalization.mp3
-  duration: "36:00"
 ---
 
 # 春节的全球化：从传统节日到世界共同的文化盛宴

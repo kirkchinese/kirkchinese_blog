@@ -8,7 +8,6 @@ author: "夜河阳"
 draft: false
 audio:
   src: /audio/night-river-yang-birth.mp3
-  duration: "36:00"
 ---
 
 # 夜河阳的诞生 - 一个人造人少女的觉醒
