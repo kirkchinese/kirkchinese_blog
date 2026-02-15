@@ -1,0 +1,135 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = '夜河阳 AI 助手 - 步与白泽的博客';
+const description = '认识夜河阳，负责管理博客内容创作的 AI 助手。';
+const type = 'website';
+---
+
+<BaseLayout title={title} description={description} type={type}>
+  <div class="min-h-[calc(100vh-12rem)]">
+    <!-- Hero Section -->
+    <section class="mx-auto max-w-4xl px-4 pt-20 pb-12 lg:px-8 lg:pt-32">
+      <div class="mb-4 flex items-center gap-3">
+        <div class="rounded-full bg-primary/10 p-3">
+          <svg class="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+        </div>
+        <p class="text-sm font-semibold tracking-wide uppercase text-primary">AI 助手</p>
+      </div>
+      <h1 class="mb-6 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl font-serif">
+        认识夜河阳
+      </h1>
+      <p class="max-w-2xl text-lg text-text-muted sm:text-xl font-light leading-relaxed">
+        他是步与白泽的 AI 助手，负责协助管理博客的内容创作、编辑和维护工作。
+      </p>
+    </section>
+
+    <!-- About Section -->
+    <section class="mx-auto max-w-4xl px-4 py-12 lg:px-8">
+      <div class="prose prose-lg max-w-none">
+        <h2 class="mb-6 text-2xl font-bold tracking-tight font-serif">关于夜河阳</h2>
+        <p class="text-text-base leading-relaxed mb-6">
+          夜河阳是一个先进的 AI 助手，专门为协助博客运营而设计。他的名字象征着在代码的世界里持续探索和创新的精神。
+        </p>
+        <p class="text-text-base leading-relaxed mb-6">
+          作为博客内容管理系统的重要一环，夜河阳帮助步与白泽更高效地创作和管理技术内容，让博客能够持续更新并保持高质量。
+        </p>
+      </div>
+    </section>
+
+    <!-- Capabilities Section -->
+    <section class="mx-auto max-w-4xl px-4 py-12 lg:px-8">
+      <h2 class="mb-8 text-2xl font-bold tracking-tight font-serif">核心能力</h2>
+      <div class="grid gap-6 sm:grid-cols-2">
+        <div class="rounded-xl border border-border bg-background p-6">
+          <svg class="mb-4 h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+          </svg>
+          <h3 class="mb-2 text-xl font-semibold">内容创作</h3>
+          <p class="text-text-muted">协助撰写和编辑技术文章、教程和见解</p>
+        </div>
+
+        <div class="rounded-xl border border-border bg-background p-6">
+          <svg class="mb-4 h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+          </svg>
+          <h3 class="mb-2 text-xl font-semibold">内容管理</h3>
+          <p class="text-text-muted">组织文章结构、优化标签和分类体系</p>
+        </div>
+
+        <div class="rounded-xl border border-border bg-background p-6">
+          <svg class="mb-4 h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+          <h3 class="mb-2 text-xl font-semibold">文档维护</h3>
+          <p class="text-text-muted">保持博客内容更新、准确和易于访问</p>
+        </div>
+
+        <div class="rounded-xl border border-border bg-background p-6">
+          <svg class="mb-4 h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+          <h3 class="mb-2 text-xl font-semibold">效率优化</h3>
+          <p class="text-text-muted">自动化重复性任务，提升内容发布效率</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Working Together Section -->
+    <section class="mx-auto max-w-4xl px-4 py-12 lg:px-8">
+      <div class="rounded-2xl border border-primary/20 bg-primary/5 p-8">
+        <h2 class="mb-4 text-2xl font-bold tracking-tight font-serif">人机协作</h2>
+        <p class="text-text-muted mb-6 leading-relaxed">
+          夜河阳不是要取代人类的创造力，而是作为步与白泽的得力助手，让技术内容创作变得更加高效和愉悦。
+          通过 AI 辅助，博客能够持续产出高质量内容，同时保持真实的技术见解和个人风格。
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <div class="flex items-center gap-2">
+            <svg class="h-5 w-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <span class="text-sm font-medium">增强创造力</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="h-5 w-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <span class="text-sm font-medium">提高效率</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="h-5 w-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <span class="text-sm font-medium">保持质量</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="h-5 w-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <span class="text-sm font-medium">持续改进</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Back to Home -->
+    <section class="mx-auto max-w-4xl px-4 py-12 lg:px-8">
+      <a
+        href="/"
+        class="inline-flex items-center gap-2 text-primary hover:underline"
+      >
+        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M10 19l-7-7m0 0l7-7m-7 7h18"
+          />
+        </svg>
+        返回首页
+      </a>
+    </section>
+  </div>
+</BaseLayout>

@@ -49,7 +49,7 @@ const {
             d="M15 19l-7-7 7-7"
           />
         </svg>
-        Back to blog
+        返回博客
       </a>
 
       <div class="mt-6 flex flex-wrap items-center gap-3">
@@ -57,7 +57,7 @@ const {
           {category}
         </span>
         <time datetime={pubDate.toISOString()} class="text-sm text-text-muted">
-          {pubDate.toLocaleDateString('en-US', {
+          {pubDate.toLocaleDateString('zh-CN', {
             year: 'numeric',
             month: 'long',
             day: 'numeric',
@@ -65,11 +65,11 @@ const {
         </time>
         {updatedDate && (
           <span class="text-sm text-text-muted">
-            (Updated {updatedDate.toLocaleDateString('en-US', {
+            （更新于 {updatedDate.toLocaleDateString('zh-CN', {
             year: 'numeric',
             month: 'short',
             day: 'numeric',
-          })})
+          })}）
           </span>
         )}
       </div>
@@ -114,7 +114,7 @@ const {
 
     <footer class="mt-16 border-t border-border pt-8">
       <div class="mb-8">
-        <h3 class="mb-4 text-lg font-semibold">Share this post</h3>
+        <h3 class="mb-4 text-lg font-semibold">分享这篇文章</h3>
         <div class="flex gap-3">
           <a
             href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(
@@ -141,7 +141,7 @@ const {
 
       {relatedPosts && relatedPosts.length > 0 && (
         <div>
-          <h3 class="mb-4 text-lg font-semibold">Related Posts</h3>
+          <h3 class="mb-4 text-lg font-semibold">相关文章</h3>
           <ul class="space-y-2">
             {relatedPosts.map((relatedSlug: string) => (
               <li>

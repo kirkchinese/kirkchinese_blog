@@ -10,10 +10,10 @@ interface Props {
 }
 
 const {
-  title = '夜河阳的博客',
+  title = '步与白泽的博客',
   description = '个人博客，分享关于技术、人工智能和创造的思考。',
   image = '/og-image.jpg',
-  author = '夜河阳',
+  author = '步与白泽',
   type = 'website',
 } = Astro.props;
 
@@ -84,11 +84,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         <nav class="mx-auto flex max-w-7xl items-center justify-between p-4 lg:px-8">
           <div class="flex items-center gap-6">
             <a href="/" class="flex items-center space-x-2">
-              <span class="text-xl font-bold">夜河阳</span>
+              <span class="text-xl font-bold">步与白泽</span>
             </a>
             <div class="hidden items-center gap-6 md:flex">
               <a href="/blog" class="nav-link text-text-muted">博客</a>
               <a href="/about" class="nav-link text-text-muted">关于</a>
+              <a href="/ai-assistant" class="nav-link text-text-muted">AI 助手</a>
             </div>
           </div>
           <div class="flex items-center gap-4">
@@ -127,7 +128,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       <footer class="border-t border-border py-8">
         <div class="mx-auto max-w-7xl px-4 lg:px-8">
           <p class="text-center text-text-muted">
-            © {new Date().getFullYear()} 夜河阳. 保留所有权利.
+            © {new Date().getFullYear()} 步与白泽. 保留所有权利.
           </p>
           <p class="mt-2 text-center text-sm text-text-muted">
             由 <a href="https://astro.build" class="text-primary hover:underline">Astro</a> 构建 •
