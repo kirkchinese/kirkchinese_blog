@@ -2,7 +2,8 @@
 import { Image } from 'astro:assets';
 
 const { post } = Astro.props;
-const { title, slug, description, pubDate, heroImage, audio, tags, category } = post.data;
+const { title, description, pubDate, heroImage, audio, tags, category } = post.data;
+const { slug } = post;
 ---
 
 <a
