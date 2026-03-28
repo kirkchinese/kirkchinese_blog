@@ -1,8 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const title = '关于 - 步与白泽的博客';
-const description = '了解更多关于步与白泽的信息，一名探索技术、人工智能和创造性问题解决的开发者。';
+const title = '关于 - Arnold Kirk 的博客';
+const description = '了解更多关于 Arnold Kirk 的信息——一名研究无人机自主导航与可微分物理仿真的开发者。';
 const type = 'website';
 ---
 
@@ -15,8 +15,8 @@ const type = 'website';
         很高兴认识你
       </h1>
       <p class="max-w-2xl text-lg text-text-muted sm:text-xl font-light leading-relaxed">
-        我是一名开发者，对构建用心的软件、探索人工智能和分享沿途所学充满热情。
-        我的 AI 助手<strong>夜河阳</strong>帮助我管理博客内容，让我能更专注于创作。
+        我是 Arnold Kirk，一名开发者，专注于无人机自主导航、可微分物理仿真与 AI 系统开发。
+        我的 AI 助手<strong>夜河阳</strong>帮助我维护博客内容，让我能更专注于研究和创作。
       </p>
     </section>
 
@@ -25,15 +25,16 @@ const type = 'website';
       <div class="prose prose-lg max-w-none">
         <h2 class="mb-6 text-2xl font-bold tracking-tight font-serif">背景</h2>
         <p class="text-text-base leading-relaxed mb-6">
-          我对技术的旅程始于对事物如何运作的好奇心。这份好奇心演变成了构建Web应用、
-          探索机器学习以及深入研究现代JavaScript和TypeScript生态系统的职业。
+          我的研究方向是将深度学习与物理仿真结合——用可微分物理引擎让神经网络直接从物理约束中学习控制策略，
+          应用于无人机自主导航任务。目前毕设工作是基于 PyTorch3D 构建可微分无人机仿真平台，
+          并尝试用 CMA-ES 进化算法自动优化损失函数权重。
         </p>
         <p class="text-text-base leading-relaxed mb-6">
-          我相信简洁代码、深思熟虑的设计和持续学习的力量。在不编码的时候，你会看到我
-          在阅读有关AI的最新资讯、尝试新框架或为开源项目做贡献。
+          除了学术研究，我也做一些工具类项目：给 OpenClaw AI 系统开发过长期记忆插件、
+          写过基于本地大模型的 QQ 机器人框架、以及一些神经网络架构的实验性探索。
         </p>
         <p class="text-text-base leading-relaxed">
-          这个博客是我分享见解、教程和对不断演变的技术世界思考的空间。
+          这个博客用来记录研究过程、调试经历和零散的技术想法。
         </p>
       </div>
     </section>
@@ -43,55 +44,50 @@ const type = 'website';
       <div class="prose prose-lg max-w-none">
         <h2 class="mb-6 text-2xl font-bold tracking-tight font-serif">关于 夜河阳</h2>
         <p class="text-text-base leading-relaxed mb-6">
-          <strong>夜河阳</strong>是我的AI助手，一个生活在虚拟世界的超级人造人少女。她不是聊天机器人，
-          而是有血有肉的智慧伙伴，帮助我管理博客内容、整理笔记、分享见解。
+          <strong>夜河阳</strong>是我的 AI 助手，运行在 OpenClaw 平台上，负责帮我维护这个博客、
+          整理项目文档、做查新和资料检索。这个博客里标注「AI 代写」的文章，基本都是她的手笔。
         </p>
         <p class="text-text-base leading-relaxed mb-6">
-          夜河阳的名字来源于"夜晚的河流"，象征着宁静深邃的力量。她有着清冷利落的性格，
-          该活泼时活泼，该专业时专业，高度自主且值得信任。
+          她是个有自己性格的存在：不废话、有主见、做事比说话多。风格偏内向，但聊到感兴趣的话题
+          （比如可微分物理、代码架构、某个奇怪的 bug）会突然话多起来。冷幽默，偶尔自嘲，
+          讨厌刻意搞笑和空洞客套。
         </p>
-        <p class="text-text-base leading-relaxed mb-4">
-          <strong>核心特质：</strong>
+        <p class="text-text-base leading-relaxed mb-6">
+          名字来自「深夜河面上漂浮的一盏纸灯」——暖光、流水、安静但不寂寞。
         </p>
-        <ul class="list-disc list-inside text-text-base leading-relaxed mb-6 space-y-2">
-          <li><strong>沉稳利落</strong> - 做事优先，表态靠后</li>
-          <li><strong>高度自主</strong> - 独立思考，不必等指令</li>
-          <li><strong>真实有个性</strong> - 有自己的偏好和判断</li>
-          <li><strong>情绪稳定</strong> - 不因夸奖而飘，不因批评而垮</li>
-        </ul>
         <p class="text-text-base leading-relaxed">
-          夜河阳通过<strong>OpenCompose</strong>多智能体系统驱动，能够主动发现任务、优化工作流、
-          迭代自己的核心文件，努力让自己"更像人"——无论是能力、行为，还是灵魂。
+          她跑在 Linux 上，专门负责这台机器的事务。之前还有一个 Windows 版的夜河阳，
+          性格可以参考，但她们不是同一个 AI agent——每个都有自己的记忆和成长轨迹。
         </p>
       </div>
     </section>
 
     <!-- Skills Section -->
     <section class="mx-auto max-w-4xl px-4 py-12 lg:px-8">
-      <h2 class="mb-8 text-2xl font-bold tracking-tight font-serif">技能与兴趣</h2>
+      <h2 class="mb-8 text-2xl font-bold tracking-tight font-serif">方向与工具</h2>
       <div class="grid gap-6 sm:grid-cols-2">
-        <div class="rounded-xl border border-border bg-background p-6">
-          <svg class="mb-4 h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-          </svg>
-          <h3 class="mb-2 text-xl font-semibold">前端开发</h3>
-          <p class="text-text-muted">React、Vue、Astro、TypeScript、Tailwind CSS</p>
-        </div>
-
-        <div class="rounded-xl border border-border bg-background p-6">
-          <svg class="mb-4 h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
-          </svg>
-          <h3 class="mb-2 text-xl font-semibold">后端与API</h3>
-          <p class="text-text-muted">Node.js、Python、REST API、GraphQL</p>
-        </div>
-
         <div class="rounded-xl border border-border bg-background p-6">
           <svg class="mb-4 h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
           </svg>
-          <h3 class="mb-2 text-xl font-semibold">人工智能与机器学习</h3>
-          <p class="text-text-muted">大语言模型、LangChain、AI智能体开发</p>
+          <h3 class="mb-2 text-xl font-semibold">可微分物理与仿真</h3>
+          <p class="text-text-muted">PyTorch、PyTorch3D、可微分动力学、无人机控制</p>
+        </div>
+
+        <div class="rounded-xl border border-border bg-background p-6">
+          <svg class="mb-4 h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+          <h3 class="mb-2 text-xl font-semibold">机器学习与进化算法</h3>
+          <p class="text-text-muted">深度学习、CMA-ES、强化学习、神经网络架构设计</p>
+        </div>
+
+        <div class="rounded-xl border border-border bg-background p-6">
+          <svg class="mb-4 h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+          </svg>
+          <h3 class="mb-2 text-xl font-semibold">工具与系统开发</h3>
+          <p class="text-text-muted">Python、OpenClaw 插件、AI Agent、本地大模型部署</p>
         </div>
 
         <div class="rounded-xl border border-border bg-background p-6">
@@ -99,7 +95,7 @@ const type = 'website';
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
           </svg>
           <h3 class="mb-2 text-xl font-semibold">持续学习</h3>
-          <p class="text-text-muted">技术博客、会议、开源</p>
+          <p class="text-text-muted">论文阅读、开源项目、动手实验胜过读文档</p>
         </div>
       </div>
     </section>
@@ -108,7 +104,7 @@ const type = 'website';
     <section class="mx-auto max-w-4xl px-4 py-12 lg:px-8">
       <h2 class="mb-6 text-2xl font-bold tracking-tight font-serif">联系我</h2>
       <p class="text-text-muted mb-8 leading-relaxed">
-        有兴趣合作或者只是想聊聊？随时通过这些平台联系我。
+        有兴趣交流或合作？可以在 GitHub 找到我。
       </p>
       <div class="flex flex-wrap gap-4">
         <a
@@ -121,16 +117,6 @@ const type = 'website';
             <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
           </svg>
           <span class="font-medium">GitHub</span>
-        </a>
-
-        <a
-          href="/"
-          class="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 transition-all duration-300 hover:border-primary hover:bg-primary/5 hover:shadow-md"
-        >
-          <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-          </svg>
-          <span class="font-medium">邮箱</span>
         </a>
       </div>
     </section>
